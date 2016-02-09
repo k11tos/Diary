@@ -8,11 +8,12 @@
 
 import UIKit
 
-class AddDiaryViewController: UIViewController, UITextFieldDelegate/*, UITextViewDelegate*/ {
+class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var subjectText: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentText: UITextView!
+    @IBOutlet weak var diaryScroll: UIScrollView!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -39,9 +40,12 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate/*, UITextVie
         super.viewDidLoad()
         
         subjectText.delegate = self
+        contentText.delegate = self
         //contentText.delegate = self
         
         contentText.layer.cornerRadius = 5
+        
+        self.diaryScroll.contentSize.height = 100
         
         if let diary = diary {
             navigationItem.title = "일기 읽어보기 / 수정하기"
@@ -92,6 +96,18 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate/*, UITextVie
             
             // Set the diary to be passed to DiaryTableViewController after the unwind segue.
             diary = Diary(date: date, subject: subject!, content: content)
+        }
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        let orientation:UIInterfaceOrientation = UIApplication.sharedApplication().statusBarOrientation
+        
+        if (UIInterfaceOrientationIsLandscape(orientation)) {
+            diaryScroll.setContentOffset(CGPointMake(0, 100), animated: true)
+            print("keyboard appeared as landscape")
+        } else if (UIInterfaceOrientationIsPortrait(orientation)) {
+            diaryScroll.setContentOffset(CGPointMake(0, 150), animated: true)
+            print("keyboard appeared as portrait")
         }
     }
 }

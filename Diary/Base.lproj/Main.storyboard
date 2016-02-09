@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Diary-->
@@ -90,72 +89,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-i0-I8Y">
-                                <rect key="frame" x="20" y="74" width="560" height="506"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obm-vW-koF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gSf-55-Nep">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-i0-I8Y">
+                                        <rect key="frame" x="10" y="10" width="580" height="580"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctA-mx-ePu">
-                                                <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
-                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2p-eb-0Me">
-                                                <rect key="frame" x="54" y="0.0" width="506" height="30"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gSf-55-Nep">
+                                                <rect key="frame" x="0.0" y="0.0" width="580" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctA-mx-ePu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2p-eb-0Me">
+                                                        <rect key="frame" x="54" y="0.0" width="526" height="30"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="VC8-jj-uDn"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q5c-DG-ZdK">
+                                                <rect key="frame" x="0.0" y="40" width="580" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="api-6r-Ew0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2016 - 01 - 24 12:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPZ-eH-klk">
+                                                        <rect key="frame" x="54" y="0.0" width="526" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="yNh-zG-39X"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uIQ-tn-rl9">
+                                                <rect key="frame" x="0.0" y="80" width="580" height="500"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBL-fw-UAL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="21"/>
+                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="XmW-v4-I2G">
+                                                        <rect key="frame" x="54" y="0.0" width="526" height="436"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="XmW-v4-I2G" secondAttribute="bottom" constant="64" id="K8h-9d-bp8"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q5c-DG-ZdK">
-                                        <rect key="frame" x="0.0" y="40" width="560" height="21"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="api-6r-Ew0">
-                                                <rect key="frame" x="0.0" y="0.0" width="44" height="21"/>
-                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2016 - 01 - 24 12:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPZ-eH-klk">
-                                                <rect key="frame" x="54" y="0.0" width="506" height="21"/>
-                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uIQ-tn-rl9">
-                                        <rect key="frame" x="0.0" y="71" width="560" height="435"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBL-fw-UAL">
-                                                <rect key="frame" x="0.0" y="0.0" width="44" height="21"/>
-                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="XmW-v4-I2G">
-                                                <rect key="frame" x="54" y="0.0" width="506" height="435"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="XmW-v4-I2G" firstAttribute="height" secondItem="uIQ-tn-rl9" secondAttribute="height" id="IEX-X5-2QK"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="5FL-i0-I8Y" firstAttribute="centerX" secondItem="Obm-vW-koF" secondAttribute="centerX" id="H2g-br-u76"/>
+                                    <constraint firstAttribute="bottom" secondItem="5FL-i0-I8Y" secondAttribute="bottom" constant="10" id="HBn-NK-sHx"/>
+                                    <constraint firstItem="5FL-i0-I8Y" firstAttribute="top" secondItem="Obm-vW-koF" secondAttribute="top" constant="10" id="PuJ-o2-1jw"/>
+                                    <constraint firstItem="5FL-i0-I8Y" firstAttribute="centerY" secondItem="Obm-vW-koF" secondAttribute="centerY" id="RIW-MT-53t"/>
+                                    <constraint firstItem="5FL-i0-I8Y" firstAttribute="leading" secondItem="Obm-vW-koF" secondAttribute="leading" constant="10" id="dOp-SQ-v5T"/>
+                                    <constraint firstAttribute="trailing" secondItem="5FL-i0-I8Y" secondAttribute="trailing" constant="10" id="pgY-QD-Rd1"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="5FL-i0-I8Y" secondAttribute="trailing" id="2YI-sF-omp"/>
-                            <constraint firstItem="4Cr-er-ykd" firstAttribute="top" secondItem="5FL-i0-I8Y" secondAttribute="bottom" constant="20" id="8we-hZ-J2P"/>
-                            <constraint firstItem="5FL-i0-I8Y" firstAttribute="top" secondItem="Ii1-IB-r9X" secondAttribute="bottom" constant="10" id="CGq-sq-dsK"/>
-                            <constraint firstItem="5FL-i0-I8Y" firstAttribute="leading" secondItem="5Ob-7G-E1z" secondAttribute="leadingMargin" id="fmx-7v-03N"/>
+                            <constraint firstItem="Obm-vW-koF" firstAttribute="centerX" secondItem="5Ob-7G-E1z" secondAttribute="centerX" id="EIk-DS-ZZW"/>
+                            <constraint firstItem="Obm-vW-koF" firstAttribute="centerY" secondItem="5Ob-7G-E1z" secondAttribute="centerY" id="Uqi-p7-uZd"/>
+                            <constraint firstItem="Obm-vW-koF" firstAttribute="width" secondItem="5Ob-7G-E1z" secondAttribute="width" id="k4b-N2-yH2"/>
+                            <constraint firstItem="Obm-vW-koF" firstAttribute="height" secondItem="5Ob-7G-E1z" secondAttribute="height" id="vd5-XS-dhX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Diary" id="K1s-cN-OrS">
@@ -173,6 +191,7 @@
                     <connections>
                         <outlet property="contentText" destination="XmW-v4-I2G" id="3fw-DV-jwk"/>
                         <outlet property="dateLabel" destination="TPZ-eH-klk" id="vDk-cH-mgg"/>
+                        <outlet property="diaryScroll" destination="Obm-vW-koF" id="EqO-ng-j6f"/>
                         <outlet property="saveButton" destination="CMX-x3-ErQ" id="agq-9e-ah3"/>
                         <outlet property="subjectText" destination="G2p-eb-0Me" id="TQ2-A0-iaq"/>
                     </connections>
@@ -202,6 +221,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vvp-m0-3FB"/>
+        <segue reference="0hf-oD-uld"/>
     </inferredMetricsTieBreakers>
 </document>
