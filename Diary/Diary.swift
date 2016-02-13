@@ -13,11 +13,13 @@ class Diary : NSObject, NSCoding {
     var date:NSDate
     var subject:String
     var content:String
+    var photo:UIImage?
     
-    init?(date:NSDate, subject:String, content:String) {
+    init?(date:NSDate, subject:String, content:String, photo:UIImage?) {
         self.date    = date
         self.subject = subject
         self.content = content
+        self.photo   = photo
         
         super.init()
         
@@ -32,6 +34,7 @@ class Diary : NSObject, NSCoding {
         static let subjectKey = "subject"
         static let dateKey    = "date"
         static let contentKey = "content"
+        static let photoKey   = "photo"
     }
     
     // MARK: Archiving Paths
@@ -43,13 +46,15 @@ class Diary : NSObject, NSCoding {
         aCoder.encodeObject(subject, forKey: PropertyKey.subjectKey)
         aCoder.encodeObject(date, forKey: PropertyKey.dateKey)
         aCoder.encodeObject(content, forKey: PropertyKey.contentKey)
+        aCoder.encodeObject(photo, forKey: PropertyKey.photoKey)
     }
     
     required convenience init?(coder aDecoder:NSCoder) {
         let subject = aDecoder.decodeObjectForKey(PropertyKey.subjectKey) as! String
         let date = aDecoder.decodeObjectForKey(PropertyKey.dateKey) as! NSDate
         let content = aDecoder.decodeObjectForKey(PropertyKey.contentKey) as! String
+        let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
         
-        self.init(date:date, subject:subject, content:content)
+        self.init(date:date, subject:subject, content:content, photo:photo)
     }
 }

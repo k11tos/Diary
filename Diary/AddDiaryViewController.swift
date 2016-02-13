@@ -8,14 +8,28 @@
 
 import UIKit
 
-class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var subjectText: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentText: UITextView!
     @IBOutlet weak var diaryScroll: UIScrollView!
+    @IBOutlet weak var photoImage: UIImageView!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
+        subjectText.resignFirstResponder()
+        contentText.resignFirstResponder()
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .PhotoLibrary
+        imagePickerController.delegate   = self
+        
+        presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+
+    
     @IBAction func cancel(sender: UIBarButtonItem) {
         //dismissViewControllerAnimated(true, completion: nil)
         
@@ -53,6 +67,7 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             currentDate = diary.date
             dateLabel.text   = dateUtil.getTimeWithFormat(currentDate, type: "short")
             contentText.text = diary.content
+            photoImage.image = diary.photo
         }
         
         checkValidDiaryName()
@@ -91,11 +106,12 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         // Pass the selected object to the new view controller.
         if saveButton === sender {
             let subject = subjectText.text
-            let date = currentDate
+            let date    = currentDate
             let content = contentText.text
+            let photo   = photoImage.image
             
             // Set the diary to be passed to DiaryTableViewController after the unwind segue.
-            diary = Diary(date: date, subject: subject!, content: content)
+            diary = Diary(date: date, subject: subject!, content: content, photo: photo)
         }
     }
     
@@ -106,8 +122,24 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             diaryScroll.setContentOffset(CGPointMake(0, 100), animated: true)
             //print("keyboard appeared as landscape")
         } else if (UIInterfaceOrientationIsPortrait(orientation)) {
-            diaryScroll.setContentOffset(CGPointMake(0, 150), animated: true)
+            diaryScroll.setContentOffset(CGPointMake(0, 50), animated: true)
             //print("keyboard appeared as portrait")
         }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // The info dictionary contains multiple representations of the image, and this uses the original.
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Set photoImageView to display the selected image.
+        photoImage.image = selectedImage
+        
+        // Dismiss the picker.
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
