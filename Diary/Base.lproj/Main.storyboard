@@ -125,12 +125,14 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="2016 - 01 - 24 12:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPZ-eH-klk">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2016. 01. 24." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jpk-z3-fUH">
                                                         <rect key="frame" x="54" y="0.0" width="526" height="30"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="dateTextFieldEditing:" destination="msO-dA-8uB" eventType="editingDidBegin" id="n3t-8f-WYf"/>
+                                                        </connections>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="XWu-lQ-09V"/>
@@ -219,7 +221,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentText" destination="XmW-v4-I2G" id="3fw-DV-jwk"/>
-                        <outlet property="dateLabel" destination="TPZ-eH-klk" id="vDk-cH-mgg"/>
+                        <outlet property="dateTextField" destination="Jpk-z3-fUH" id="jXa-su-R5G"/>
                         <outlet property="diaryScroll" destination="Obm-vW-koF" id="EqO-ng-j6f"/>
                         <outlet property="photoImage" destination="6bC-6A-wGa" id="gww-kx-rnM"/>
                         <outlet property="saveButton" destination="CMX-x3-ErQ" id="agq-9e-ah3"/>
