@@ -81,7 +81,7 @@ class DiaryTableViewController: UITableViewController {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing diary.
                 diaries[selectedIndexPath.row] = diary
-                diaries.sortInPlace({$0.date.compare($1.date) == NSComparisonResult.OrderedAscending})
+                diaries.sortInPlace({$0.date.compare($1.date) == NSComparisonResult.OrderedDescending})
 
                 //tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
                 tableView.reloadData()
@@ -91,7 +91,7 @@ class DiaryTableViewController: UITableViewController {
                 //let newIndexPath = NSIndexPath(forRow: diaries.count, inSection: 0)
                 diaries.append(diary)
                 //tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
-                diaries.sortInPlace({$0.date.compare($1.date) == NSComparisonResult.OrderedAscending})
+                diaries.sortInPlace({$0.date.compare($1.date) == NSComparisonResult.OrderedDescending})
 
                 tableView.reloadData()
             }
