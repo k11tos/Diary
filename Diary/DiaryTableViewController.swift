@@ -19,6 +19,7 @@ class DiaryTableViewController: UITableViewController {
         
         if let savedDiaries = loadDiaries() {
             diaries += savedDiaries
+
         } else {
             loadSampleDiaries()
         }
@@ -76,17 +77,23 @@ class DiaryTableViewController: UITableViewController {
     
     @IBAction func unwindToDiaryList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? AddDiaryViewController, diary = sourceViewController.diary {
-            
+
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing diary.
                 diaries[selectedIndexPath.row] = diary
-                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                diaries.sortInPlace({$0.date.compare($1.date) == NSComparisonResult.OrderedAscending})
+
+                //tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                tableView.reloadData()
             }
             else {
                 // Add a new diary.
-                let newIndexPath = NSIndexPath(forRow: diaries.count, inSection: 0)
+                //let newIndexPath = NSIndexPath(forRow: diaries.count, inSection: 0)
                 diaries.append(diary)
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+                //tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+                diaries.sortInPlace({$0.date.compare($1.date) == NSComparisonResult.OrderedAscending})
+
+                tableView.reloadData()
             }
             
             saveDiaries()
@@ -148,7 +155,7 @@ class DiaryTableViewController: UITableViewController {
             }
         }
         else if segue.identifier == "AddItem" {
-            print("Adding new diary.")
+            //print("Adding new diary.")
         }
     }
     
@@ -161,6 +168,7 @@ class DiaryTableViewController: UITableViewController {
         }
     }
     func loadDiaries() -> [Diary]? {
+
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Diary.ArchiveURL.path!) as? [Diary]
     }
 }
