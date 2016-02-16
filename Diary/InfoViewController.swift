@@ -14,7 +14,7 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let str = NSURL(string: "https://dl.dropboxusercontent.com/s/go032hprc02p6al/download.html")
+        let str = NSURL(string: "https://dl.dropboxusercontent.com/s/obf0hoh2v9wz6up/diary.html")
         let request = NSURLRequest(URL: str!)
         
         webView.loadRequest(request)
