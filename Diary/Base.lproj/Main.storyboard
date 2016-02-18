@@ -20,7 +20,7 @@
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-ej-2kk">
                                 <rect key="frame" x="0.0" y="44" width="600" height="556"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHI-0U-TDt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shc-Bn-SDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2236" y="-518"/>
+            <point key="canvasLocation" x="-412" y="1227"/>
         </scene>
         <!--Diary-->
         <scene sceneID="iXQ-ho-Oak">
@@ -90,6 +90,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.11824024822695035" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="9te-dM-XfI" id="SeF-Cw-Vvy"/>
                                     <outlet property="subjectLabel" destination="1xV-3l-1dn" id="6lK-ii-oQ3"/>
@@ -112,7 +113,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cw9-YU-9Gr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="341"/>
+            <point key="canvasLocation" x="1421" y="353"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nea-CQ-Pt1">
@@ -141,14 +142,14 @@
                         <viewControllerLayoutGuide type="bottom" id="4Cr-er-ykd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Ob-7G-E1z">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obm-vW-koF">
-                                <rect key="frame" x="0.0" y="10" width="600" height="590"/>
+                                <rect key="frame" x="0.0" y="10" width="600" height="526"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-i0-I8Y" userLabel="Total Stack View">
-                                        <rect key="frame" x="10" y="0.0" width="580" height="530"/>
+                                        <rect key="frame" x="10" y="0.0" width="580" height="440"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gSf-55-Nep" userLabel="Subject Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="30"/>
@@ -161,7 +162,7 @@
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2p-eb-0Me">
                                                         <rect key="frame" x="54" y="0.0" width="526" height="30"/>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="0.13921210106382978" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -193,7 +194,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uIQ-tn-rl9" userLabel="Content Stack View">
-                                                <rect key="frame" x="0.0" y="80" width="580" height="450"/>
+                                                <rect key="frame" x="0.0" y="80" width="580" height="360"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBL-fw-UAL">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
@@ -204,25 +205,25 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jlI-cq-c0w">
-                                                        <rect key="frame" x="54" y="0.0" width="526" height="450"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jlI-cq-c0w">
+                                                        <rect key="frame" x="54" y="0.0" width="526" height="360"/>
                                                         <subviews>
                                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" highlightedImage="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="6bC-6A-wGa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                                 <gestureRecognizers/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="6bC-6A-wGa" secondAttribute="height" multiplier="1:1" id="L3e-Fp-lyB"/>
-                                                                    <constraint firstAttribute="height" constant="100" id="c59-1K-7hE"/>
+                                                                    <constraint firstAttribute="height" constant="200" id="c59-1K-7hE"/>
                                                                 </constraints>
                                                                 <connections>
                                                                     <outletCollection property="gestureRecognizers" destination="mUb-7W-Ibw" appends="YES" id="QA7-6R-RPj"/>
                                                                 </connections>
                                                             </imageView>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="XmW-v4-I2G">
-                                                                <rect key="frame" x="0.0" y="100" width="526" height="350"/>
-                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <rect key="frame" x="0.0" y="210" width="526" height="150"/>
+                                                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="0.13921210106382978" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="350" id="zA8-7Z-BDS"/>
+                                                                    <constraint firstAttribute="height" constant="150" id="zA8-7Z-BDS"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -246,21 +247,22 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5FL-i0-I8Y" secondAttribute="width" constant="20" id="UMc-vl-fh0"/>
-                                    <constraint firstAttribute="trailing" secondItem="5FL-i0-I8Y" secondAttribute="trailing" id="X3J-WJ-LkE"/>
+                                    <constraint firstAttribute="trailing" secondItem="5FL-i0-I8Y" secondAttribute="trailing" constant="10" id="X3J-WJ-LkE"/>
                                     <constraint firstItem="5FL-i0-I8Y" firstAttribute="top" secondItem="Obm-vW-koF" secondAttribute="top" id="Y6K-bx-wc4"/>
-                                    <constraint firstAttribute="bottom" secondItem="5FL-i0-I8Y" secondAttribute="bottom" constant="10" id="gZ3-nE-s7M"/>
+                                    <constraint firstAttribute="bottom" secondItem="5FL-i0-I8Y" secondAttribute="bottom" constant="36" id="gZ3-nE-s7M"/>
                                     <constraint firstItem="5FL-i0-I8Y" firstAttribute="centerX" secondItem="Obm-vW-koF" secondAttribute="centerX" id="qp8-eO-bV3"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Obm-vW-koF" firstAttribute="top" secondItem="Ii1-IB-r9X" secondAttribute="bottom" constant="-54" id="6fN-md-L1k"/>
+                            <constraint firstItem="Obm-vW-koF" firstAttribute="top" secondItem="Ii1-IB-r9X" secondAttribute="bottom" constant="10" id="6fN-md-L1k"/>
                             <constraint firstItem="4Cr-er-ykd" firstAttribute="top" secondItem="Obm-vW-koF" secondAttribute="bottom" id="S3E-Fw-bsB"/>
                             <constraint firstItem="Obm-vW-koF" firstAttribute="width" secondItem="5Ob-7G-E1z" secondAttribute="width" id="UCE-75-zbk"/>
                             <constraint firstItem="Obm-vW-koF" firstAttribute="centerX" secondItem="5Ob-7G-E1z" secondAttribute="centerX" id="pdO-RZ-DtQ"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="New Diary" id="K1s-cN-OrS">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HqB-pK-quw">
                             <connections>
@@ -290,7 +292,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2631" y="379"/>
+            <point key="canvasLocation" x="2463" y="819"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ASf-Xr-LPQ">
@@ -308,7 +310,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wcp-fu-JMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849" y="751"/>
+            <point key="canvasLocation" x="1421" y="1227"/>
         </scene>
     </scenes>
     <resources>

@@ -67,10 +67,10 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         let orientation:UIInterfaceOrientation = UIApplication.sharedApplication().statusBarOrientation
         
         if (UIInterfaceOrientationIsLandscape(orientation)) {
-            diaryScroll.setContentOffset(CGPointMake(0, 100), animated: true)
+            diaryScroll.setContentOffset(CGPointMake(0, 280), animated: true)
             //print("keyboard appeared as landscape")
         } else if (UIInterfaceOrientationIsPortrait(orientation)) {
-            diaryScroll.setContentOffset(CGPointMake(0, 50), animated: true)
+            diaryScroll.setContentOffset(CGPointMake(0, 120), animated: true)
             //print("keyboard appeared as portrait")
         }
     }
