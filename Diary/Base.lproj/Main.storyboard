@@ -182,6 +182,7 @@
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2016. 01. 24." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jpk-z3-fUH">
                                                         <rect key="frame" x="54" y="0.0" width="526" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="0.13921210110000001" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
