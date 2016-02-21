@@ -127,11 +127,41 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         subjectText.resignFirstResponder()
         contentText.resignFirstResponder()
         
+        /*
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .PhotoLibrary
         imagePickerController.delegate   = self
         
         presentViewController(imagePickerController, animated: true, completion: nil)
+*/
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let alertActionView = UIAlertController(title: "Image", message: "Select an option how to get the image", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        let camera = UIAlertAction(title: "Take a picture", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+            imagePickerController.sourceType = .Camera
+            alertActionView.dismissViewControllerAnimated(true, completion: nil)
+            self.presentViewController(imagePickerController, animated: true, completion: nil)
+        }
+        
+        let photo = UIAlertAction(title: "Find in photo library", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+            imagePickerController.sourceType = .PhotoLibrary
+            alertActionView.dismissViewControllerAnimated(true, completion: nil)
+            self.presentViewController(imagePickerController, animated: true, completion: nil)
+        }
+        
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive) { (UIAlertAction) -> Void in
+            alertActionView.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        alertActionView.addAction(camera)
+        alertActionView.addAction(photo)
+        alertActionView.addAction(cancel)
+        presentViewController(alertActionView, animated: true, completion: nil)
+        
     }
 
     @IBAction func cancel(sender: UIBarButtonItem) {
