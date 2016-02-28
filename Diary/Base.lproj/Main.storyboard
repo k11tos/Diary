@@ -27,7 +27,7 @@
                                 <items>
                                     <barButtonItem style="done" systemItem="done" id="PV2-Wi-VHV">
                                         <connections>
-                                            <segue destination="kLg-0b-5Ku" kind="presentation" id="xTM-rP-eE3"/>
+                                            <segue destination="hgK-gG-ONg" kind="unwind" unwindAction="unwindToDiaryList:" id="PQD-YA-kKR"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -50,6 +50,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shc-Bn-SDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hgK-gG-ONg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-412" y="1227"/>
         </scene>
@@ -65,7 +66,7 @@
                             <rect key="frame" x="0.0" y="142" width="600" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <connections>
-                                <segue destination="c4A-C1-gQd" kind="presentation" id="hWV-5o-LSB"/>
+                                <segue destination="c4A-C1-gQd" kind="presentation" modalTransitionStyle="coverVertical" id="hWV-5o-LSB"/>
                             </connections>
                         </button>
                         <prototypes>
