@@ -32,11 +32,16 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HQh-FZ-177">
+                                <rect key="frame" x="290" y="312" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HQh-FZ-177" firstAttribute="centerX" secondItem="IC3-ej-2kk" secondAttribute="centerX" id="0FI-aa-1Id"/>
                             <constraint firstItem="IC3-ej-2kk" firstAttribute="top" secondItem="eHI-0U-TDt" secondAttribute="bottom" id="Brg-hE-T2k"/>
                             <constraint firstItem="IC3-ej-2kk" firstAttribute="trailing" secondItem="eHI-0U-TDt" secondAttribute="trailing" id="Ieq-y2-pAq"/>
+                            <constraint firstItem="HQh-FZ-177" firstAttribute="centerY" secondItem="IC3-ej-2kk" secondAttribute="centerY" id="Jtw-Gu-xpC"/>
                             <constraint firstItem="eHI-0U-TDt" firstAttribute="leading" secondItem="xo2-qR-p5s" secondAttribute="leading" id="KSI-3T-Ruc"/>
                             <constraint firstAttribute="trailing" secondItem="eHI-0U-TDt" secondAttribute="trailing" id="Mn2-Wy-8DN"/>
                             <constraint firstItem="eHI-0U-TDt" firstAttribute="top" secondItem="xo2-qR-p5s" secondAttribute="top" id="ND4-AS-tIb"/>
@@ -46,6 +51,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MjI-0X-xWe"/>
                     <connections>
+                        <outlet property="spinner" destination="HQh-FZ-177" id="mPU-k6-4FE"/>
                         <outlet property="webView" destination="IC3-ej-2kk" id="tDy-N1-MFu"/>
                     </connections>
                 </viewController>

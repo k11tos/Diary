@@ -8,10 +8,13 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class InfoViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
+        self.webView.delegate = self
         super.viewDidLoad()
         
         let str = NSURL(string: "https://dl.dropboxusercontent.com/s/obf0hoh2v9wz6up/diary.html")
@@ -41,5 +44,24 @@ class InfoViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        self.spinner.startAnimating()
+    }
 
+    func webViewDidFinishLoad(webView: UIWebView) {
+        self.spinner.stopAnimating()
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        self.spinner.stopAnimating()
+        
+        let alert = UIAlertController(title: "오류", message: "페이지를 읽어오지 못했습니다.", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "확인", style: .Cancel) {(_) in
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+        
+        alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: false, completion: nil)
+    }
 }
