@@ -156,7 +156,7 @@
                                 <rect key="frame" x="0.0" y="10" width="600" height="526"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-i0-I8Y" userLabel="Total Stack View">
-                                        <rect key="frame" x="10" y="0.0" width="580" height="440"/>
+                                        <rect key="frame" x="10" y="0.0" width="580" height="650"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gSf-55-Nep" userLabel="Subject Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="30"/>
@@ -202,7 +202,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uIQ-tn-rl9" userLabel="Content Stack View">
-                                                <rect key="frame" x="0.0" y="80" width="580" height="360"/>
+                                                <rect key="frame" x="0.0" y="80" width="580" height="570"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBL-fw-UAL">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
@@ -214,7 +214,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jlI-cq-c0w">
-                                                        <rect key="frame" x="54" y="0.0" width="526" height="360"/>
+                                                        <rect key="frame" x="54" y="0.0" width="526" height="570"/>
                                                         <subviews>
                                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" highlightedImage="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="6bC-6A-wGa">
                                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -236,6 +236,13 @@
                                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
+                                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XEX-Ut-WK8">
+                                                                <rect key="frame" x="0.0" y="370" width="200" height="200"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="XEX-Ut-WK8" secondAttribute="height" multiplier="1:1" id="Deb-FK-Lsq"/>
+                                                                    <constraint firstAttribute="width" constant="200" id="sLA-Ef-0B2"/>
+                                                                </constraints>
+                                                            </mapView>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="XmW-v4-I2G" firstAttribute="top" secondItem="6bC-6A-wGa" secondAttribute="bottom" constant="10" id="E9s-yc-JgD"/>
@@ -287,6 +294,7 @@
                         <outlet property="contentText" destination="XmW-v4-I2G" id="3fw-DV-jwk"/>
                         <outlet property="dateTextField" destination="Jpk-z3-fUH" id="jXa-su-R5G"/>
                         <outlet property="diaryScroll" destination="Obm-vW-koF" id="EqO-ng-j6f"/>
+                        <outlet property="mapView" destination="XEX-Ut-WK8" id="SuU-pP-Gjl"/>
                         <outlet property="photoImage" destination="6bC-6A-wGa" id="gww-kx-rnM"/>
                         <outlet property="saveButton" destination="CMX-x3-ErQ" id="agq-9e-ah3"/>
                         <outlet property="subjectText" destination="G2p-eb-0Me" id="TQ2-A0-iaq"/>

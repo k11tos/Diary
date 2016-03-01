@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
-class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     // MARK: Properties
     let datePickerView:UIDatePicker = UIDatePicker()
     var diary = Diary?()
     var currentDate:NSDate = NSDate()
+    let manager = CLLocationManager()
     
     @IBOutlet weak var subjectText: UITextField!
     //@IBOutlet weak var dateLabel: UILabel!
@@ -23,6 +25,7 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var mapView: MKMapView!
 
     // MARK: UITextFieldDelegate
     @IBAction func dateTextFieldEditing(sender: UITextField) {
@@ -182,7 +185,6 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         currentDate = NSDate()
         let dateUtil = CommonUtil()
         dateTextField.text = dateUtil.getTimeWithFormat(currentDate, type: "only short date")
-        //dateLabel.text = dateUtil.getTimeWithFormat(currentDate, type: "short")
         super.viewDidLoad()
         
         subjectText.delegate = self
@@ -197,13 +199,33 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             navigationItem.title = "일기 읽어보기 / 수정하기"
             subjectText.text = diary.subject
             currentDate = diary.date
-            //dateLabel.text   = dateUtil.getTimeWithFormat(currentDate, type: "short")
             dateTextField.text   = dateUtil.getTimeWithFormat(currentDate, type: "only short date")
             contentText.text = diary.content
             photoImage.image = diary.photo
         }
         
         checkValidDiaryName()
+        
+//        let lat:Double = 37.383331
+//        let lng:Double = 126.949997
+//        
+//        let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        self.manager.requestWhenInUseAuthorization()
+        self.manager.requestAlwaysAuthorization()
+        //self.mapView.showsUserLocation = true
+        
+        let location:CLLocationCoordinate2D = (self.manager.location?.coordinate)!
+        let regionRadious:CLLocationDistance = 400
+        
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
+        
+        self.mapView.setRegion(coordinateRegion, animated: true)
+        
+        print (location.latitude)
+        print (location.longitude)
+        let point = MKPointAnnotation()
+        point.coordinate = location
+        self.mapView.addAnnotation(point)
 
         // Do any additional setup after loading the view.
     }

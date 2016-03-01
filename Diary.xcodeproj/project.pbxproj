@@ -18,6 +18,7 @@
 		4885DD2E1C5E31400017B3D8 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD2D1C5E31400017B3D8 /* DiaryTableViewCell.swift */; };
 		4885DD301C5E336D0017B3D8 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD2F1C5E336D0017B3D8 /* Diary.swift */; };
 		4885DD321C5E44CF0017B3D8 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD311C5E44CF0017B3D8 /* AddDiaryViewController.swift */; };
+		48C19ACE1C8531BF005AB760 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C19ACD1C8531BF005AB760 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		4885DD2D1C5E31400017B3D8 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		4885DD2F1C5E336D0017B3D8 /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		4885DD311C5E44CF0017B3D8 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
+		48C19ACD1C8531BF005AB760 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		48E16DDE1C720D9B00055F92 /* Diary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Diary.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C19ACE1C8531BF005AB760 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +73,7 @@
 		4885DCFF1C5E30C80017B3D8 = {
 			isa = PBXGroup;
 			children = (
+				48C19ACD1C8531BF005AB760 /* MapKit.framework */,
 				4885DD0A1C5E30C80017B3D8 /* Diary */,
 				4885DD1F1C5E30C90017B3D8 /* DiaryTests */,
 				4885DD091C5E30C80017B3D8 /* Products */,
