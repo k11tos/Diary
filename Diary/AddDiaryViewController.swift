@@ -210,11 +210,11 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
 //        let lng:Double = 126.949997
 //        
 //        let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-        self.manager.requestWhenInUseAuthorization()
-        self.manager.requestAlwaysAuthorization()
+        manager.requestWhenInUseAuthorization()
+        manager.requestAlwaysAuthorization()
         //self.mapView.showsUserLocation = true
         
-        let location:CLLocationCoordinate2D = (self.manager.location?.coordinate)!
+        let location:CLLocationCoordinate2D = (manager.location?.coordinate)!
         let regionRadious:CLLocationDistance = 400
         
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
