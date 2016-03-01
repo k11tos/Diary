@@ -206,16 +206,16 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         checkValidDiaryName()
         
-//        let lat:Double = 37.383331
-//        let lng:Double = 126.949997
-//        
-//        let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-        manager.requestWhenInUseAuthorization()
-        manager.requestAlwaysAuthorization()
-        //self.mapView.showsUserLocation = true
+        let lat:Double = 37.25781449999999
+        let lng:Double = 127.07937949999996
         
-        let location:CLLocationCoordinate2D = (manager.location?.coordinate)!
-        let regionRadious:CLLocationDistance = 400
+        let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+//        manager.requestWhenInUseAuthorization()
+//        manager.requestAlwaysAuthorization()
+//        //self.mapView.showsUserLocation = true
+//        
+//        let location:CLLocationCoordinate2D = (manager.location?.coordinate)!
+        let regionRadious:CLLocationDistance = 1000
         
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
         
