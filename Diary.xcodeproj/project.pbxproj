@@ -18,6 +18,7 @@
 		4885DD2E1C5E31400017B3D8 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD2D1C5E31400017B3D8 /* DiaryTableViewCell.swift */; };
 		4885DD301C5E336D0017B3D8 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD2F1C5E336D0017B3D8 /* Diary.swift */; };
 		4885DD321C5E44CF0017B3D8 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD311C5E44CF0017B3D8 /* AddDiaryViewController.swift */; };
+		489872131C87184F000A6B43 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489872121C87184F000A6B43 /* CoreLocation.framework */; };
 		48C19ACE1C8531BF005AB760 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C19ACD1C8531BF005AB760 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		4885DD2D1C5E31400017B3D8 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		4885DD2F1C5E336D0017B3D8 /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		4885DD311C5E44CF0017B3D8 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
+		489872121C87184F000A6B43 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		48C19ACD1C8531BF005AB760 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		48E16DDE1C720D9B00055F92 /* Diary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Diary.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				489872131C87184F000A6B43 /* CoreLocation.framework in Frameworks */,
 				48C19ACE1C8531BF005AB760 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +76,7 @@
 		4885DCFF1C5E30C80017B3D8 = {
 			isa = PBXGroup;
 			children = (
+				489872121C87184F000A6B43 /* CoreLocation.framework */,
 				48C19ACD1C8531BF005AB760 /* MapKit.framework */,
 				4885DD0A1C5E30C80017B3D8 /* Diary */,
 				4885DD1F1C5E30C90017B3D8 /* DiaryTests */,

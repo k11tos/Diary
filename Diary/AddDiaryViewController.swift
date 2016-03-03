@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
@@ -206,26 +207,39 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         checkValidDiaryName()
         
-        let lat:Double = 37.25781449999999
-        let lng:Double = 127.07937949999996
-        
-        let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-//        manager.requestWhenInUseAuthorization()
-//        manager.requestAlwaysAuthorization()
-//        //self.mapView.showsUserLocation = true
-//        
-//        let location:CLLocationCoordinate2D = (manager.location?.coordinate)!
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+        manager.distanceFilter = kCLDistanceFilterNone
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.startUpdatingLocation()
+
         let regionRadious:CLLocationDistance = 1000
         
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
+        if let locationManagerLocation = manager.location {
+            let location:CLLocationCoordinate2D = (locationManagerLocation.coordinate)
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
+            
+            self.mapView.setRegion(coordinateRegion, animated: true)
+            
+            print (location.latitude)
+            print (location.longitude)
+            let point = MKPointAnnotation()
+            point.coordinate = location
+            self.mapView.addAnnotation(point)
+        } else {
+            let location = CLLocationCoordinate2D(latitude: 0,longitude:0)
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
+            
+            self.mapView.setRegion(coordinateRegion, animated: true)
+            
+            print (location.latitude)
+            print (location.longitude)
+            let point = MKPointAnnotation()
+            point.coordinate = location
+            self.mapView.addAnnotation(point)
+        }
+        manager.stopUpdatingLocation()
         
-        self.mapView.setRegion(coordinateRegion, animated: true)
-        
-        print (location.latitude)
-        print (location.longitude)
-        let point = MKPointAnnotation()
-        point.coordinate = location
-        self.mapView.addAnnotation(point)
 
         // Do any additional setup after loading the view.
     }
@@ -233,5 +247,9 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initLocationManager() {
+        
     }
 }
