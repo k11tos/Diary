@@ -13,10 +13,13 @@ import CoreLocation
 class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     // MARK: Properties
-    let datePickerView:UIDatePicker = UIDatePicker()
-    var diary = Diary?()
-    var currentDate:NSDate = NSDate()
-    let manager = CLLocationManager()
+    let datePickerView  = UIDatePicker()
+    var diary           = Diary?()
+    var currentDate     = NSDate()
+    let locationManager = CLLocationManager()
+    var location = CLLocationCoordinate2D(latitude: 0,longitude: 0)
+    let regionRadious:CLLocationDistance = 1000
+
     
     @IBOutlet weak var subjectText: UITextField!
     //@IBOutlet weak var dateLabel: UILabel!
@@ -108,9 +111,14 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             let date    = currentDate
             let content = contentText.text
             let photo   = photoImage.image
+            let latitude = location.latitude
+            let longitude = location.longitude
+            
+            print("saved latitude = \(latitude)")
+            print("saved longitude = \(longitude)")
             
             // Set the diary to be passed to DiaryTableViewController after the unwind segue.
-            diary = Diary(date: date, subject: subject!, content: content, photo: photo)
+            diary = Diary(date: date, subject: subject!, content: content, photo: photo, latitude: latitude, longitude: longitude)
         }
     }
     
@@ -168,6 +176,32 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
     }
 
+    @IBAction func setCurrentLocation(sender: UITapGestureRecognizer) {
+        
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        initLocationManager()
+        
+        if let locationManagerLocation = locationManager.location {
+            locationManager.startUpdatingLocation()
+            location = locationManagerLocation.coordinate
+            locationManager.stopUpdatingLocation()
+        } else {
+            location.latitude = 0
+            location.longitude = 0
+        }
+        
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
+        
+        self.mapView.setRegion(coordinateRegion, animated: true)
+        
+        print("current latitude = \(location.latitude)")
+        print("current longitude = \(location.longitude)")
+        let point = MKPointAnnotation()
+        point.coordinate = location
+        self.mapView.addAnnotation(point)
+
+    }
+
     @IBAction func cancel(sender: UIBarButtonItem) {
         //dismissViewControllerAnimated(true, completion: nil)
         
@@ -187,7 +221,7 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         let dateUtil = CommonUtil()
         dateTextField.text = dateUtil.getTimeWithFormat(currentDate, type: "only short date")
         super.viewDidLoad()
-        
+
         subjectText.delegate = self
         contentText.delegate = self
 
@@ -203,42 +237,35 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             dateTextField.text   = dateUtil.getTimeWithFormat(currentDate, type: "only short date")
             contentText.text = diary.content
             photoImage.image = diary.photo
+            
+            location.latitude = diary.latitude
+            location.longitude = diary.longitude
+
+        } else {
+            initLocationManager()
+            
+            if let locationManagerLocation = locationManager.location {
+                locationManager.startUpdatingLocation()
+                location = locationManagerLocation.coordinate
+                locationManager.stopUpdatingLocation()
+            } else {
+                location.latitude = 0
+                location.longitude = 0
+            }
         }
+
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
         
+        self.mapView.setRegion(coordinateRegion, animated: true)
+        
+        print("current latitude = \(location.latitude)")
+        print("current longitude = \(location.longitude)")
+        let point = MKPointAnnotation()
+        point.coordinate = location
+        self.mapView.addAnnotation(point)
+      
         checkValidDiaryName()
         
-        manager.delegate = self
-        manager.requestWhenInUseAuthorization()
-        manager.distanceFilter = kCLDistanceFilterNone
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.startUpdatingLocation()
-
-        let regionRadious:CLLocationDistance = 1000
-        
-        if let locationManagerLocation = manager.location {
-            let location:CLLocationCoordinate2D = (locationManagerLocation.coordinate)
-            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
-            
-            self.mapView.setRegion(coordinateRegion, animated: true)
-            
-            print (location.latitude)
-            print (location.longitude)
-            let point = MKPointAnnotation()
-            point.coordinate = location
-            self.mapView.addAnnotation(point)
-        } else {
-            let location = CLLocationCoordinate2D(latitude: 0,longitude:0)
-            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
-            
-            self.mapView.setRegion(coordinateRegion, animated: true)
-            
-            print (location.latitude)
-            print (location.longitude)
-            let point = MKPointAnnotation()
-            point.coordinate = location
-            self.mapView.addAnnotation(point)
-        }
-        manager.stopUpdatingLocation()
         
 
         // Do any additional setup after loading the view.
@@ -250,6 +277,36 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     }
     
     func initLocationManager() {
-        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.AuthorizedWhenInUse
+        {
+            initLocationManager()
+            
+            if let locationManagerLocation = locationManager.location {
+                locationManager.startUpdatingLocation()
+                location = locationManagerLocation.coordinate
+                locationManager.stopUpdatingLocation()
+            } else {
+                location.latitude = 0
+                location.longitude = 0
+            }
+            
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
+            
+            self.mapView.setRegion(coordinateRegion, animated: true)
+            
+            print("current latitude = \(location.latitude)")
+            print("current longitude = \(location.longitude)")
+            let point = MKPointAnnotation()
+            point.coordinate = location
+            self.mapView.addAnnotation(point)
+            
+        }
     }
 }

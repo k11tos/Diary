@@ -8,18 +8,24 @@
 
 import Foundation
 import UIKit
+import CoreLocation
+
 
 class Diary : NSObject, NSCoding {
     var date:NSDate
     var subject:String
     var content:String
     var photo:UIImage?
+    var latitude:CLLocationDegrees
+    var longitude:CLLocationDegrees
     
-    init?(date:NSDate, subject:String, content:String, photo:UIImage?) {
-        self.date    = date
-        self.subject = subject
-        self.content = content
-        self.photo   = photo
+    init?(date:NSDate, subject:String, content:String, photo:UIImage?, latitude:CLLocationDegrees, longitude:CLLocationDegrees) {
+        self.date      = date
+        self.subject   = subject
+        self.content   = content
+        self.photo     = photo
+        self.latitude  = latitude
+        self.longitude = longitude
         
         super.init()
         
@@ -31,10 +37,12 @@ class Diary : NSObject, NSCoding {
     // MARK: Property
     
     struct PropertyKey {
-        static let subjectKey = "subject"
-        static let dateKey    = "date"
-        static let contentKey = "content"
-        static let photoKey   = "photo"
+        static let subjectKey   = "subject"
+        static let dateKey      = "date"
+        static let contentKey   = "content"
+        static let photoKey     = "photo"
+        static let latitudeKey  = "latitude"
+        static let longitudeKey = "longitude"
     }
     
     // MARK: Archiving Paths
@@ -47,6 +55,8 @@ class Diary : NSObject, NSCoding {
         aCoder.encodeObject(date, forKey: PropertyKey.dateKey)
         aCoder.encodeObject(content, forKey: PropertyKey.contentKey)
         aCoder.encodeObject(photo, forKey: PropertyKey.photoKey)
+        aCoder.encodeObject(latitude, forKey: PropertyKey.latitudeKey)
+        aCoder.encodeObject(longitude, forKey: PropertyKey.longitudeKey)
     }
     
     required convenience init?(coder aDecoder:NSCoder) {
@@ -54,7 +64,9 @@ class Diary : NSObject, NSCoding {
         let date = aDecoder.decodeObjectForKey(PropertyKey.dateKey) as! NSDate
         let content = aDecoder.decodeObjectForKey(PropertyKey.contentKey) as! String
         let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
+        let latitude = aDecoder.decodeObjectForKey(PropertyKey.latitudeKey) as! CLLocationDegrees
+        let longitude = aDecoder.decodeObjectForKey(PropertyKey.longitudeKey) as! CLLocationDegrees
         
-        self.init(date:date, subject:subject, content:content, photo:photo)
+        self.init(date:date, subject:subject, content:content, photo:photo, latitude:latitude, longitude:longitude)
     }
 }
