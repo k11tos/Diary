@@ -114,8 +114,8 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             let latitude = location.latitude
             let longitude = location.longitude
             
-            print("saved latitude = \(latitude)")
-            print("saved longitude = \(longitude)")
+            //print("saved latitude = \(latitude)")
+            //print("saved longitude = \(longitude)")
             
             // Set the diary to be passed to DiaryTableViewController after the unwind segue.
             diary = Diary(date: date, subject: subject!, content: content, photo: photo, latitude: latitude, longitude: longitude)
@@ -194,8 +194,8 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         self.mapView.setRegion(coordinateRegion, animated: true)
         
-        print("current latitude = \(location.latitude)")
-        print("current longitude = \(location.longitude)")
+        //print("current latitude = \(location.latitude)")
+        //print("current longitude = \(location.longitude)")
         let point = MKPointAnnotation()
         point.coordinate = location
         self.mapView.addAnnotation(point)
@@ -258,8 +258,8 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         self.mapView.setRegion(coordinateRegion, animated: true)
         
-        print("current latitude = \(location.latitude)")
-        print("current longitude = \(location.longitude)")
+        //print("current latitude = \(location.latitude)")
+        //print("current longitude = \(location.longitude)")
         let point = MKPointAnnotation()
         point.coordinate = location
         self.mapView.addAnnotation(point)
@@ -301,8 +301,8 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             
             self.mapView.setRegion(coordinateRegion, animated: true)
             
-            print("current latitude = \(location.latitude)")
-            print("current longitude = \(location.longitude)")
+            //print("current latitude = \(location.latitude)")
+            //print("current longitude = \(location.longitude)")
             let point = MKPointAnnotation()
             point.coordinate = location
             self.mapView.addAnnotation(point)
