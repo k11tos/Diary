@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4823EF781C7366360070B750 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4823EF771C7366360070B750 /* InfoViewController.swift */; };
-		48663FB61CB1427400C832FB /* NanumScript.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 48663FB51CB1427400C832FB /* NanumScript.ttc */; };
 		486F415C1C60D30600D7CDB9 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486F415B1C60D30600D7CDB9 /* CommonUtil.swift */; };
 		4885DD0C1C5E30C80017B3D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD0B1C5E30C80017B3D8 /* AppDelegate.swift */; };
 		4885DD111C5E30C80017B3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4885DD0F1C5E30C80017B3D8 /* Main.storyboard */; };
@@ -20,6 +19,7 @@
 		4885DD301C5E336D0017B3D8 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD2F1C5E336D0017B3D8 /* Diary.swift */; };
 		4885DD321C5E44CF0017B3D8 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD311C5E44CF0017B3D8 /* AddDiaryViewController.swift */; };
 		489872131C87184F000A6B43 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489872121C87184F000A6B43 /* CoreLocation.framework */; };
+		48A313381CB5587100F63C00 /* SeoulHangangL.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A313371CB5587100F63C00 /* SeoulHangangL.otf */; };
 		48C19ACE1C8531BF005AB760 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C19ACD1C8531BF005AB760 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +35,6 @@
 
 /* Begin PBXFileReference section */
 		4823EF771C7366360070B750 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		48663FB51CB1427400C832FB /* NanumScript.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumScript.ttc; path = ../../../../Library/Fonts/NanumScript.ttc; sourceTree = "<group>"; };
 		486F415B1C60D30600D7CDB9 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		4885DD081C5E30C80017B3D8 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4885DD0B1C5E30C80017B3D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		4885DD2F1C5E336D0017B3D8 /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		4885DD311C5E44CF0017B3D8 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
 		489872121C87184F000A6B43 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		48A313371CB5587100F63C00 /* SeoulHangangL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SeoulHangangL.otf; path = ../../../../Library/Fonts/SeoulHangangL.otf; sourceTree = "<group>"; };
 		48C19ACD1C8531BF005AB760 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		48E16DDE1C720D9B00055F92 /* Diary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Diary.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,7 +78,7 @@
 		4885DCFF1C5E30C80017B3D8 = {
 			isa = PBXGroup;
 			children = (
-				48663FB51CB1427400C832FB /* NanumScript.ttc */,
+				48A313371CB5587100F63C00 /* SeoulHangangL.otf */,
 				489872121C87184F000A6B43 /* CoreLocation.framework */,
 				48C19ACD1C8531BF005AB760 /* MapKit.framework */,
 				4885DD0A1C5E30C80017B3D8 /* Diary */,
@@ -211,7 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48663FB61CB1427400C832FB /* NanumScript.ttc in Resources */,
+				48A313381CB5587100F63C00 /* SeoulHangangL.otf in Resources */,
 				4885DD161C5E30C80017B3D8 /* LaunchScreen.storyboard in Resources */,
 				4885DD131C5E30C80017B3D8 /* Assets.xcassets in Resources */,
 				4885DD111C5E30C80017B3D8 /* Main.storyboard in Resources */,

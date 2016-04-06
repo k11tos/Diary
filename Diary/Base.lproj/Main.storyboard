@@ -6,15 +6,15 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NanumScript.ttc">
-            <string>NanumPen</string>
-            <string>NanumPen</string>
-            <string>NanumPen</string>
-            <string>NanumPen</string>
-            <string>NanumPen</string>
-            <string>NanumPen</string>
-            <string>NanumPen</string>
-            <string>NanumBrush</string>
+        <mutableArray key="SeoulHangangL.otf">
+            <string>SeoulHangangL</string>
+            <string>SeoulHangangL</string>
+            <string>SeoulHangangL</string>
+            <string>SeoulHangangL</string>
+            <string>SeoulHangangL</string>
+            <string>SeoulHangangL</string>
+            <string>SeoulHangangL</string>
+            <string>SeoulHangangL</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -97,13 +97,13 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9te-dM-XfI">
                                             <rect key="frame" x="8" y="8" width="129" height="33"/>
-                                            <fontDescription key="fontDescription" name="NanumPen" family="Nanum Pen Script" pointSize="30"/>
+                                            <fontDescription key="fontDescription" name="SeoulHangangL" family="SeoulHangang" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-3l-1dn">
                                             <rect key="frame" x="145" y="8" width="447" height="33"/>
-                                            <fontDescription key="fontDescription" name="NanumPen" family="Nanum Pen Script" pointSize="30"/>
+                                            <fontDescription key="fontDescription" name="SeoulHangangL" family="SeoulHangang" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -174,18 +174,18 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctA-mx-ePu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="0JO-sv-egV"/>
+                                                            <constraint firstAttribute="width" constant="50" id="0JO-sv-egV"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="NanumPen" family="Nanum Pen Script" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="SeoulHangangL" family="SeoulHangang" pointSize="20"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력해주세요 (필수)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2p-eb-0Me">
-                                                        <rect key="frame" x="70" y="0.0" width="510" height="30"/>
+                                                        <rect key="frame" x="60" y="0.0" width="520" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="0.13921210106382978" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="NanumPen" family="Nanum Pen Script" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="SeoulHangangL" family="SeoulHangang" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
@@ -197,18 +197,18 @@
                                                 <rect key="frame" x="0.0" y="40" width="580" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="api-6r-Ew0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="pxD-9F-Atq"/>
+                                                            <constraint firstAttribute="width" constant="50" id="pxD-9F-Atq"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="NanumPen" family="Nanum Pen Script" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="SeoulHangangL" family="SeoulHangang" pointSize="20"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2016. 01. 24." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jpk-z3-fUH">
-                                                        <rect key="frame" x="70" y="0.0" width="510" height="30"/>
+                                                        <rect key="frame" x="60" y="0.0" width="520" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="0.13921210110000001" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="NanumPen" family="Nanum Pen Script" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="SeoulHangangL" family="SeoulHangang" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="dateTextFieldEditing:" destination="msO-dA-8uB" eventType="editingDidBegin" id="n3t-8f-WYf"/>
@@ -223,17 +223,17 @@
                                                 <rect key="frame" x="0.0" y="80" width="580" height="570"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBL-fw-UAL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="Q15-Ta-890"/>
+                                                            <constraint firstAttribute="width" constant="50" id="Q15-Ta-890"/>
                                                             <constraint firstAttribute="height" constant="30" id="SXf-EE-egv"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="NanumPen" family="Nanum Pen Script" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="SeoulHangangL" family="SeoulHangang" pointSize="20"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jlI-cq-c0w">
-                                                        <rect key="frame" x="70" y="0.0" width="510" height="570"/>
+                                                        <rect key="frame" x="60" y="0.0" width="520" height="570"/>
                                                         <subviews>
                                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" highlightedImage="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="6bC-6A-wGa">
                                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -247,12 +247,12 @@
                                                                 </connections>
                                                             </imageView>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="XmW-v4-I2G">
-                                                                <rect key="frame" x="0.0" y="210" width="510" height="150"/>
+                                                                <rect key="frame" x="0.0" y="210" width="520" height="150"/>
                                                                 <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="0.13921210106382978" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="150" id="zA8-7Z-BDS"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="NanumBrush" family="Nanum Brush Script" pointSize="24"/>
+                                                                <fontDescription key="fontDescription" name="SeoulHangangL" family="SeoulHangang" pointSize="18"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qxh-5I-qjl">
