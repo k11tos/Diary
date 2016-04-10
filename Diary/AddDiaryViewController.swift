@@ -129,8 +129,7 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     }
     
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
-        subjectText.resignFirstResponder()
-        contentText.resignFirstResponder()
+        dismissKeyboard()
         
         /*
         let imagePickerController = UIImagePickerController()
@@ -169,7 +168,7 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
     }
 
-    @IBAction func setCurrentLocationByLongPress(sender: UILongPressGestureRecognizer) {
+    @IBAction func setUserLocation(sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.Began {
             let point = sender.locationInView(self.mapView)
             location = self.mapView.convertPoint(point, toCoordinateFromView: self.mapView)
@@ -182,6 +181,15 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             location = getCurrentLocationFromGPS()
             setCurrentLocationToMap(location, moveRegion: true)
         }
+    }
+    
+    @IBAction func dismissKeyboardWhenTouched(sender: UITapGestureRecognizer) {
+        dismissKeyboard()
+    }
+    
+    func dismissKeyboard () {
+        subjectText.resignFirstResponder()
+        contentText.resignFirstResponder()
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {

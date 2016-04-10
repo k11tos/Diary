@@ -289,6 +289,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5FL-i0-I8Y" secondAttribute="width" constant="20" id="UMc-vl-fh0"/>
                                     <constraint firstAttribute="trailing" secondItem="5FL-i0-I8Y" secondAttribute="trailing" constant="10" id="X3J-WJ-LkE"/>
@@ -296,6 +297,9 @@
                                     <constraint firstAttribute="bottom" secondItem="5FL-i0-I8Y" secondAttribute="bottom" constant="36" id="gZ3-nE-s7M"/>
                                     <constraint firstItem="5FL-i0-I8Y" firstAttribute="centerX" secondItem="Obm-vW-koF" secondAttribute="centerX" id="qp8-eO-bV3"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fLI-kM-tZG" appends="YES" id="zGm-WD-d9E"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -344,9 +348,14 @@
                 </tapGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Uru-nI-PgB">
                     <connections>
-                        <action selector="setCurrentLocationByLongPress:" destination="msO-dA-8uB" id="tyi-Ve-afD"/>
+                        <action selector="setUserLocation:" destination="msO-dA-8uB" id="ng8-cf-670"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="fLI-kM-tZG">
+                    <connections>
+                        <action selector="dismissKeyboardWhenTouched:" destination="msO-dA-8uB" id="duJ-t4-YeM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2463" y="819"/>
         </scene>
