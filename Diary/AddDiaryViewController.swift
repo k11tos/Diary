@@ -170,17 +170,17 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     }
 
     @IBAction func setCurrentLocationByLongPress(sender: UILongPressGestureRecognizer) {
-        if sender.state == UIGestureRecognizerState.Recognized {
+        if sender.state == UIGestureRecognizerState.Began {
             let point = sender.locationInView(self.mapView)
             location = self.mapView.convertPoint(point, toCoordinateFromView: self.mapView)
-            setCurrentLocationToMap(location)
+            setCurrentLocationToMap(location, moveRegion:false)
         }
     }
 
     @IBAction func setCurrentLocation(sender: UITapGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.Recognized {
             location = getCurrentLocationFromGPS()
-            setCurrentLocationToMap(location)
+            setCurrentLocationToMap(location, moveRegion: true)
         }
     }
     
@@ -225,7 +225,7 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         }
         
         dateTextField.text   = dateUtil.getTimeWithFormat(currentDate, type: "only short date")
-        setCurrentLocationToMap(location)
+        setCurrentLocationToMap(location, moveRegion: true)
         checkValidDiaryName()
         
         // Do any additional setup after loading the view.
@@ -265,16 +265,18 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         if status == CLAuthorizationStatus.AuthorizedWhenInUse
         {
             location = getCurrentLocationFromGPS()
-            setCurrentLocationToMap(location)
+            setCurrentLocationToMap(location, moveRegion: true)
         }
     }
     
-    func setCurrentLocationToMap (location:CLLocationCoordinate2D) {
+    func setCurrentLocationToMap (location:CLLocationCoordinate2D, moveRegion:Bool) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadious, regionRadious)
         let point = MKPointAnnotation()
         point.coordinate = location
 
-        self.mapView.setRegion(coordinateRegion, animated: true)
+        if(moveRegion) {
+            self.mapView.setRegion(coordinateRegion, animated: true)
+        }
         self.mapView.removeAnnotations(self.mapView.annotations)
         self.mapView.addAnnotation(point)
     }
