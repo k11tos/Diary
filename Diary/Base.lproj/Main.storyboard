@@ -267,6 +267,7 @@
                                                                         </constraints>
                                                                         <connections>
                                                                             <outletCollection property="gestureRecognizers" destination="3rx-4n-bXu" appends="YES" id="q9s-tm-PH6"/>
+                                                                            <outletCollection property="gestureRecognizers" destination="Uru-nI-PgB" appends="YES" id="uHg-qe-A2c"/>
                                                                         </connections>
                                                                     </mapView>
                                                                 </subviews>
@@ -314,6 +315,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="CMX-x3-ErQ">
                             <connections>
+                                <action selector="saveButton:" destination="msO-dA-8uB" id="BD6-OE-fOX"/>
                                 <segue destination="dbP-4T-jos" kind="unwind" unwindAction="unwindToDiaryList:" id="TBO-tV-h5p"/>
                             </connections>
                         </barButtonItem>
@@ -337,9 +339,14 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="3rx-4n-bXu">
                     <connections>
-                        <action selector="setCurrentLocation:" destination="msO-dA-8uB" id="kx5-sa-wfA"/>
+                        <action selector="setCurrentLocation:" destination="msO-dA-8uB" id="ewz-dO-cy6"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Uru-nI-PgB">
+                    <connections>
+                        <action selector="setCurrentLocationByLongPress:" destination="msO-dA-8uB" id="tyi-Ve-afD"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2463" y="819"/>
         </scene>

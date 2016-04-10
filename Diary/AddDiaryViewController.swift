@@ -107,7 +107,7 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             let photo     = photoImage.image
             let latitude  = location.latitude
             let longitude = location.longitude
-
+            
             // Set the diary to be passed to DiaryTableViewController after the unwind segue.
             diary = Diary(date     : date,
                           subject  : subject!,
@@ -169,11 +169,21 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
     }
 
-    @IBAction func setCurrentLocation(sender: UITapGestureRecognizer) {
-        let location = getCurrentLocationFromGPS()
-        setCurrentLocationToMap(location)
+    @IBAction func setCurrentLocationByLongPress(sender: UILongPressGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.Recognized {
+            let point = sender.locationInView(self.mapView)
+            location = self.mapView.convertPoint(point, toCoordinateFromView: self.mapView)
+            setCurrentLocationToMap(location)
+        }
     }
 
+    @IBAction func setCurrentLocation(sender: UITapGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.Recognized {
+            location = getCurrentLocationFromGPS()
+            setCurrentLocationToMap(location)
+        }
+    }
+    
     @IBAction func cancel(sender: UIBarButtonItem) {
         //dismissViewControllerAnimated(true, completion: nil)
         
@@ -189,13 +199,9 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     override func viewDidLoad() {
         
-        currentDate  = NSDate()
         let dateUtil = CommonUtil()
-        dateTextField.text = dateUtil.getTimeWithFormat(currentDate, type: "only short date")
         super.viewDidLoad()
         
-        var currentLocation = CLLocationCoordinate2D(latitude: 0,longitude: 0)
-
         subjectText.delegate = self
         contentText.delegate = self
         
@@ -207,18 +213,19 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             navigationItem.title = "일기 읽어보기 / 수정하기"
             subjectText.text     = diary.subject
             currentDate          = diary.date
-            dateTextField.text   = dateUtil.getTimeWithFormat(currentDate, type: "only short date")
             contentText.text     = diary.content
             photoImage.image     = diary.photo
             
-            currentLocation.latitude  = diary.latitude
-            currentLocation.longitude = diary.longitude
+            location.latitude  = diary.latitude
+            location.longitude = diary.longitude
 
         } else {
-            currentLocation = getCurrentLocationFromGPS()
+            currentDate     = NSDate()
+            location = getCurrentLocationFromGPS()
         }
-
-        setCurrentLocationToMap(currentLocation)
+        
+        dateTextField.text   = dateUtil.getTimeWithFormat(currentDate, type: "only short date")
+        setCurrentLocationToMap(location)
         checkValidDiaryName()
         
         // Do any additional setup after loading the view.
@@ -257,8 +264,8 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedWhenInUse
         {
-            let currentLocation = getCurrentLocationFromGPS()
-            setCurrentLocationToMap(currentLocation)
+            location = getCurrentLocationFromGPS()
+            setCurrentLocationToMap(location)
         }
     }
     
