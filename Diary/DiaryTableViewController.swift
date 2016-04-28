@@ -19,11 +19,7 @@ class DiaryTableViewController: UITableViewController {
         
         if let savedDiaries = loadDiaries() {
             diaries += savedDiaries
-
-        } else {
-            loadSampleDiaries()
         }
-        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,17 +28,6 @@ class DiaryTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func loadSampleDiaries() {
-        
-        let defaultPhoto = UIImage(named:"netbook")!
-        
-        let diary0 = Diary(date: NSDate(timeIntervalSince1970: 1000), subject: "subject0", content: "content0", photo: defaultPhoto, latitude:37.2587672, longitude:127.0785919)!
-        let diary1 = Diary(date: NSDate(timeIntervalSince1970: 2000), subject: "subject1", content: "content1", photo: defaultPhoto, latitude:37.3922340, longitude:127.1319950)!
-        let diary2 = Diary(date: NSDate(timeIntervalSince1970: 3000), subject: "subject2", content: "content2", photo: defaultPhoto, latitude:37.2244570, longitude:127.0719190)!
-        
-        diaries += [diary0, diary1, diary2]
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
