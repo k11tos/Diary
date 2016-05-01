@@ -18,60 +18,6 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Info View Controller-->
-        <scene sceneID="DlZ-Aq-VY4">
-            <objects>
-                <viewController id="c4A-C1-gQd" userLabel="Info View Controller" customClass="InfoViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3D4-Ll-vv8"/>
-                        <viewControllerLayoutGuide type="bottom" id="OcI-Ao-F6s"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xo2-qR-p5s">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-ej-2kk">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
-                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHI-0U-TDt">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem style="done" systemItem="done" id="PV2-Wi-VHV">
-                                        <connections>
-                                            <segue destination="hgK-gG-ONg" kind="unwind" unwindAction="unwindToDiaryList:" id="PQD-YA-kKR"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HQh-FZ-177">
-                                <rect key="frame" x="290" y="312" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="HQh-FZ-177" firstAttribute="centerX" secondItem="IC3-ej-2kk" secondAttribute="centerX" id="0FI-aa-1Id"/>
-                            <constraint firstItem="IC3-ej-2kk" firstAttribute="top" secondItem="eHI-0U-TDt" secondAttribute="bottom" id="Brg-hE-T2k"/>
-                            <constraint firstItem="IC3-ej-2kk" firstAttribute="trailing" secondItem="eHI-0U-TDt" secondAttribute="trailing" id="Ieq-y2-pAq"/>
-                            <constraint firstItem="HQh-FZ-177" firstAttribute="centerY" secondItem="IC3-ej-2kk" secondAttribute="centerY" id="Jtw-Gu-xpC"/>
-                            <constraint firstItem="eHI-0U-TDt" firstAttribute="leading" secondItem="xo2-qR-p5s" secondAttribute="leading" id="KSI-3T-Ruc"/>
-                            <constraint firstAttribute="trailing" secondItem="eHI-0U-TDt" secondAttribute="trailing" id="Mn2-Wy-8DN"/>
-                            <constraint firstItem="eHI-0U-TDt" firstAttribute="top" secondItem="xo2-qR-p5s" secondAttribute="top" id="ND4-AS-tIb"/>
-                            <constraint firstItem="IC3-ej-2kk" firstAttribute="leading" secondItem="eHI-0U-TDt" secondAttribute="leading" id="SX9-fm-Sfg"/>
-                            <constraint firstItem="IC3-ej-2kk" firstAttribute="bottom" secondItem="OcI-Ao-F6s" secondAttribute="top" id="WJu-YY-jWP"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="MjI-0X-xWe"/>
-                    <connections>
-                        <outlet property="spinner" destination="HQh-FZ-177" id="mPU-k6-4FE"/>
-                        <outlet property="webView" destination="IC3-ej-2kk" id="tDy-N1-MFu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Shc-Bn-SDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="hgK-gG-ONg" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-412" y="1227"/>
-        </scene>
         <!--Diary-->
         <scene sceneID="iXQ-ho-Oak">
             <objects>
@@ -80,13 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="PAd-PJ-g0r">
-                            <rect key="frame" x="0.0" y="142" width="600" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <connections>
-                                <segue destination="c4A-C1-gQd" kind="presentation" modalTransitionStyle="coverVertical" id="hWV-5o-LSB"/>
-                            </connections>
-                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiaryTableViewCell" rowHeight="50" id="dxV-Ic-6V0" customClass="DiaryTableViewCell" customModule="Diary" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="50"/>

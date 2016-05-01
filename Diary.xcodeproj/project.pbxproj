@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4823EF781C7366360070B750 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4823EF771C7366360070B750 /* InfoViewController.swift */; };
 		486F415C1C60D30600D7CDB9 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486F415B1C60D30600D7CDB9 /* CommonUtil.swift */; };
 		4885DD0C1C5E30C80017B3D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885DD0B1C5E30C80017B3D8 /* AppDelegate.swift */; };
 		4885DD111C5E30C80017B3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4885DD0F1C5E30C80017B3D8 /* Main.storyboard */; };
@@ -34,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4823EF771C7366360070B750 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		486F415B1C60D30600D7CDB9 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		4885DD081C5E30C80017B3D8 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4885DD0B1C5E30C80017B3D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				486F415B1C60D30600D7CDB9 /* CommonUtil.swift */,
 				4885DD0B1C5E30C80017B3D8 /* AppDelegate.swift */,
 				4885DD0F1C5E30C80017B3D8 /* Main.storyboard */,
-				4823EF771C7366360070B750 /* InfoViewController.swift */,
 				4885DD311C5E44CF0017B3D8 /* AddDiaryViewController.swift */,
 				4885DD121C5E30C80017B3D8 /* Assets.xcassets */,
 				4885DD141C5E30C80017B3D8 /* LaunchScreen.storyboard */,
@@ -235,7 +232,6 @@
 				4885DD0C1C5E30C80017B3D8 /* AppDelegate.swift in Sources */,
 				4885DD2C1C5E31220017B3D8 /* DiaryTableViewController.swift in Sources */,
 				486F415C1C60D30600D7CDB9 /* CommonUtil.swift in Sources */,
-				4823EF781C7366360070B750 /* InfoViewController.swift in Sources */,
 				4885DD2E1C5E31400017B3D8 /* DiaryTableViewCell.swift in Sources */,
 				4885DD321C5E44CF0017B3D8 /* AddDiaryViewController.swift in Sources */,
 				4885DD301C5E336D0017B3D8 /* Diary.swift in Sources */,
@@ -373,7 +369,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Diary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.home.Diary;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.pig.com.home.Diary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -387,7 +383,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Diary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.home.Diary;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.pig.com.home.Diary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
